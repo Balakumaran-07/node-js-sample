@@ -1,13 +1,23 @@
-var express = require('express')
-var app = express()
+import express from "express";
+import InfisicalClient from "infisical-node";
+const app = express();
+const PORT = 3000;
 
-app.set('port', (process.env.PORT || 5000))
-app.use(express.static(__dirname + '/public'))
+const client = new InfisicalClient({
+  token: "YOUR_INFISICAL_TOKEN",
+});
 
-app.get('/', function(request, response) {
-  response.send('Hello World!')
-})
+app.get("/", async (req, res) => {
+  // access value
+  const name = await client.getSecret("NAME", {
+    environment: "dev",
+    path: "/",
+    type: "shared",
+  });
+  res.send(`Hello! My name is: ${name.secretValue}`);
+});
 
-app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port'))
-})
+app.listen(PORT, async () => {
+  // initialize client
+  console.log(`App listening on port ${port}`);
+});
