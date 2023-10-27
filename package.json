@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "express": "^4.13.3"
+    "infisical-node":"1.4.2"
   },
   "engines": {
     "node": "4.0.0"
