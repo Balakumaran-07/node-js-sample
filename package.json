@@ -20,7 +20,8 @@
   "keywords": [
     "node",
     "heroku",
-    "express"
+    "express",
+    "infisical-node"
   ],
   "author": "Mark Pundsack",
   "contributors": [
