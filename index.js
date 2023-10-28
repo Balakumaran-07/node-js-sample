@@ -4,7 +4,8 @@ const app = express();
 const PORT = 3000;
 
 const client = new InfisicalClient({
-  token: "ak.653b93f2fef89b1de0fee717.828da31cc6eaeaa35f70f37ede50dab9",
+  token: "st.653c9f61fef89b1de0fefdaf.7688e48c2fb9edebc3fc656109ab3653.7fa666892f965e95ea9b2b1da1d8bd21"
+,
 });
 
 app.get("/", async (req, res) => {
